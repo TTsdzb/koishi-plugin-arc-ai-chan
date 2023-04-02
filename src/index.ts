@@ -1,12 +1,43 @@
 import { Context, Schema } from "koishi";
-import { readSongList } from "./music";
-import { readAf } from "./af";
+import * as fs from "fs/promises";
+import { z } from "zod";
+import path from "path";
 
 export const name = "arc-ai-chan";
 
 export interface Config {}
 
 export const Config: Schema<Config> = Schema.object({});
+
+const afSchema = z.record(z.string().array());
+const songListSchema = z.object({
+  songs: z
+    .object({
+      title_localized: z.record(z.string()),
+      artist: z.string(),
+    })
+    .array(),
+});
+
+async function readAf() {
+  return afSchema.parse(
+    JSON.parse(
+      await fs.readFile(path.join(__dirname, "af2023.json"), {
+        encoding: "utf-8",
+      })
+    )
+  );
+}
+
+async function readSongList() {
+  return songListSchema.parse(
+    JSON.parse(
+      await fs.readFile(path.join(__dirname, "songlist.json"), {
+        encoding: "utf-8",
+      })
+    )
+  ).songs;
+}
 
 export async function apply(ctx: Context) {
   const regExp = /AI酱.*(推荐|挑|随|换).*一首.*(曲子|歌)/i;
