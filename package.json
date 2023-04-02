@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-arc-ai-chan",
-  "description": "Arcaea AI酱复刻（",
+  "description": "Arcaea AI酱复刻版。",
   "version": "0.0.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -8,12 +8,22 @@
     "lib",
     "dist"
   ],
+  "contributors": [
+    "TTsdzb <ttsdzb@outlook.com>"
+  ],
   "license": "MIT",
+  "homepage": "https://github.com/TTsdzb/koishi-plugin-arc-ai-chan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TTsdzb/koishi-plugin-arc-ai-chan.git"
+  },
   "scripts": {},
   "keywords": [
     "chatbot",
     "koishi",
-    "plugin"
+    "plugin",
+    "game",
+    "fun"
   ],
   "peerDependencies": {
     "koishi": "^4.11.9"
