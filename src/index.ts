@@ -24,8 +24,7 @@ export async function apply(ctx: Context) {
     // 随机一首歌
     const music = musicData[Math.floor(Math.random() * musicData.length)];
 
-    text = text.replace(/“歌曲名称2”/g, `“${music.title}”`);
-    text = text.replace(/“歌曲名称”/g, `“${music.title}”`);
+    text = text.replace(/歌曲名称/g, `${music.title}`);
     text = text.replace(/“作曲家”/g, `“${music.basic_info.artist}”`);
 
     return text;
