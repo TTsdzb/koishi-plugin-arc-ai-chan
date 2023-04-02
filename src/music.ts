@@ -2,22 +2,21 @@ import * as fs from "fs/promises";
 import { z } from "zod";
 import path from "path";
 
-const musicDataSchema = z
-  .object({
-    title: z.string(),
-    level: z.string().array(),
-    basic_info: z.object({
+const songListSchema = z.object({
+  songs: z
+    .object({
+      title_localized: z.record(z.string()),
       artist: z.string(),
-    }),
-  })
-  .array();
+    })
+    .array(),
+});
 
-export async function readMusicData() {
-  return musicDataSchema.parse(
+export async function readSongList() {
+  return songListSchema.parse(
     JSON.parse(
-      await fs.readFile(path.join(__dirname, "music_data.json"), {
+      await fs.readFile(path.join(__dirname, "songlist.json"), {
         encoding: "utf-8",
       })
     )
-  );
+  ).songs;
 }
