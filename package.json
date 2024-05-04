@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-arc-ai-chan",
   "description": "Koishi插件，让你的机器人充当Arcaea的AI酱。",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
