@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-arc-ai-chan",
-  "description": "Arcaea AI酱复刻版。",
+  "description": "Koishi插件，让你的机器人充当Arcaea的AI酱。",
   "version": "0.0.5",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -30,5 +30,13 @@
   },
   "dependencies": {
     "zod": "^3.21.4"
+  },
+  "koishi": {
+    "description": {
+      "zh": "让你的机器人充当Arcaea的AI酱。"
+    },
+    "locales": [
+      "zh"
+    ]
   }
 }
