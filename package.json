@@ -17,7 +17,6 @@
     "type": "git",
     "url": "git+https://github.com/TTsdzb/koishi-plugin-arc-ai-chan.git"
   },
-  "scripts": {},
   "keywords": [
     "chatbot",
     "koishi",
