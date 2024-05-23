@@ -28,7 +28,7 @@
     "koishi": "^4.11.9"
   },
   "dependencies": {
-    "zod": "^3.21.4"
+    "zod": "^3.23.8"
   },
   "koishi": {
     "description": {
